@@ -4,10 +4,12 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -30,6 +32,7 @@ public class FormularioJfx extends Application{
 		   Text scenetittle = new Text("¿Como tú por aquí?"); // 
 		   scenetittle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));// se le indica la fuente y las caracteristicas de la misma
 		   grid.add(scenetittle, 0, 0, 2, 1);// el metodo grid.add añade la variable deseada, en este caso -> scenetitle al grid
+		   //scenetittle se añade en la columna 0 fila 0, y establece el espacio(span) de la columna a 2 y de la fila en 1
 		   
 		   Label userName = new Label("Nombre Usuario: "); //etiqueta usuario
 		   grid.add(userName, 0, 1); // etiqueta y posicionamiento en el grid de la misma -> nomVariable -> columna/fila
@@ -43,6 +46,12 @@ public class FormularioJfx extends Application{
 		   PasswordField passBox = new PasswordField();// caja de texto a introducir contraseña
 		   grid.add(passBox, 1, 2); // etiqueta y posicionamiento en el grid de la misma -> nomVariable -> columna/fila
 
+		   Button btn = new Button("Registrate cristiano...");// creacion del botón con la etiqueta String
+		   HBox hbBtn = new HBox(10); // creacion del panel de diseño con separacion de 10px a los lados
+		   hbBtn.setAlignment(Pos.BOTTOM_RIGHT);// colocación del botón
+		   hbBtn.getChildren().add(btn); // el boton(btn) se añade al panel de diseño HBox y este se añade al grid...
+		   grid.add(hbBtn, 1, 4); // ...aqui, en la columna 1, fila 4
+		   
 		   Scene scene = new Scene(grid,300,275); // establece la altura(300)/anchura(275) del Scene
 		   primaryStage.setScene(scene);		  // 
 		   primaryStage.show(); // muestra la ventana, hace que aparezca
