@@ -56,7 +56,7 @@ public class FormularioJfx extends Application{
 		   primaryStage.setScene(scene);		  // 
 		   primaryStage.show(); // muestra la ventana, hace que aparezca
 	   }
-	   // PAGINA 33 DEL PDF tutorial-javafx-APartir-pag28
+	   
 	   
 // Insets nos permite escribir el espacio en torno al área rectangular que forma nuestros elementos gráficos de login.¿?
 	   
