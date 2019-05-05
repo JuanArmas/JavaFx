@@ -1,6 +1,8 @@
 package fx;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -51,6 +54,18 @@ public class FormularioJfx extends Application{
 		   hbBtn.setAlignment(Pos.BOTTOM_RIGHT);// colocación del botón
 		   hbBtn.getChildren().add(btn); // el boton(btn) se añade al panel de diseño HBox y este se añade al grid...
 		   grid.add(hbBtn, 1, 4); // ...aqui, en la columna 1, fila 4
+		   
+		   final Text actiontarget = new Text(); // creacion de la caja de texto donde se mostrara el resultado¿?
+		   grid.add(actiontarget, 1, 6); // posicionamiento de la caja de texto
+		   
+		   btn.setOnAction(new EventHandler<ActionEvent>() { // setOnAction -> controla los eventos (eventHandler)
+			
+			   @Override
+				public void handle(ActionEvent event) {// 
+					actiontarget.setFill(Color.FIREBRICK);// actionTarget
+					actiontarget.setText("Botón de inicio de seción presionado");// 		
+				}
+			});
 		   
 		   Scene scene = new Scene(grid,300,275); // establece la altura(300)/anchura(275) del Scene
 		   primaryStage.setScene(scene);		  // 
